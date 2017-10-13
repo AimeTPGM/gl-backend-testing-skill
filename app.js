@@ -11,9 +11,9 @@ app.use(bodyParser.json())
 * Params: username, password
 * Return: 'Correct username and password'
 **/
-app.post('/login', function (req, res, next) {
+app.post('/login', function (req, rest) {
   console.log('post – /login')
-  dao.readUserByUsernameAndPassword(req, res, next)
+  dao.readUserByUsernameAndPassword(req, res)
   
 })
 
@@ -61,6 +61,17 @@ app.get('/user/:username', function (req, res) {
 app.put('/user/changeByID', function (req, res) {
   console.log('put – /user/changeByID')
   dao.updateUser(req, res)
+})
+
+/**
+* Description: delete a user by id
+* Req: delete
+* Params: id
+* Return: 
+**/
+app.delete('/user/remove/:id', function (req, res) {
+  console.log('delete – /user/remove/'+req.params.id)
+  dao.deleteUserByID(req,res)
 })
 
 

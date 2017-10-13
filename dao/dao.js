@@ -61,7 +61,7 @@ exports.createUser = function(req, res){
   })
 }
 
-exports.readUserByUsernameAndPassword = function(req, res, next){
+exports.readUserByUsernameAndPassword = function(req, res){
   var username = req.body.username
   var password = req.body.password
   db.any('SELECT * FROM member WHERE username=\''+username+'\' AND password=\''+password+'\';')
@@ -72,4 +72,15 @@ exports.readUserByUsernameAndPassword = function(req, res, next){
   .catch(function (err) {
     res.status(400).send(false)
   })
+}
+
+exports.deleteUserByID = function(req, res){
+  var id = req.params.id
+  db.result('DELETE FROM member WHERE id='+id+';')
+  .then(function (result) {
+    res.send(result)
+  })
+  .catch(function (err) {
+    res.status(400).send()
+  });
 }
