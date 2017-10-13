@@ -1,6 +1,6 @@
 # Backend Testing Skill
 
-this project is referred to [GetLinks](https://github.com/GetLinks/Tech-Guide/tree/master/backend)
+this project is referred to [GetLinks Backend Testing Skill](https://github.com/GetLinks/Tech-Guide/tree/master/backend)
 
 # Before Start
 
@@ -58,9 +58,9 @@ use [Postman](https://www.getpostman.com/) to send a request to the app!
 
 ### Register a member
 
-POST request to ```http://localhost:3000/user/new```
+send a POST request to ```http://localhost:3000/user/new```
 
-request body (json)
+with request body (json)
 
 ```
 {
@@ -72,9 +72,9 @@ request body (json)
 
 ### Login
 
-POST request to ```http://localhost:3000/login```
+send a POST request to ```http://localhost:3000/login```
 
-request body (json)
+with request body (json)
 
 ```
 {
@@ -85,11 +85,11 @@ request body (json)
 
 ### Get all users' information
 
-GET request to ```http://localhost:3000/users```
+send a GET request to ```http://localhost:3000/users```
 
 ### Get users' information by username
 
-GET request to ```http://localhost:3000/user/:username```
+send a GET request to ```http://localhost:3000/user/:username```
 
 **Example**
 ```
@@ -99,7 +99,7 @@ http://localhost:3000/user/Aime
 
 ### Change a user's information by ID
 
-PUT request to ```http://localhost:3000/user/changeByID```
+send a PUT request to ```http://localhost:3000/user/changeByID```
 
 request body (json)
 
@@ -114,7 +114,7 @@ request body (json)
 
 ### Delete a user by ID
 
-DELETE request to ```http://localhost:3000/user/remove/:id```
+send a DELETE request to ```http://localhost:3000/user/remove/:id```
 
 **Example** 
 ```
