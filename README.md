@@ -70,6 +70,19 @@ request body (json)
 }
 ```
 
+### Login
+
+POST request to ```http://localhost:3000/login```
+
+request body (json)
+
+```
+{
+	"username" : "John",
+	"password" : "1234"
+}
+```
+
 ### Get all users' information
 
 GET request to ```http://localhost:3000/users```
@@ -99,17 +112,13 @@ request body (json)
 }
 ```
 
-### Login
+### Delete a user by ID
 
-POST request to ```http://localhost:3000/login```
+DELETE request to ```http://localhost:3000/user/remove/:id```
 
-request body (json)
-
+Example 
 ```
-{
-	"username" : "John",
-	"password" : "1234"
-}
+http://localhost:3000/user/remove/1
 ```
 
 # Enjoy!
