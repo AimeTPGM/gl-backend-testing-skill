@@ -54,9 +54,9 @@ App will be running on localhost:3000
 
 use [Postman](https://www.getpostman.com/) to send a request to the app!
 
-**Available APIs**
+## Available APIs
 
-## Register a member
+### Register a member
 
 POST request to ```http://localhost:3000/user/new```
 
@@ -70,11 +70,11 @@ request body (json)
 }
 ```
 
-## Get all users' information
+### Get all users' information
 
 GET request to ```http://localhost:3000/users```
 
-## Get users' information by username
+### Get users' information by username
 
 GET request to ```http://localhost:3000/user/:username```
 
@@ -84,7 +84,7 @@ http://localhost:3000/user/John
 http://localhost:3000/user/Aime
 ```
 
-## Change a user's information by ID
+### Change a user's information by ID
 
 PUT request to ```http://localhost:3000/user/changeByID```
 
@@ -99,7 +99,7 @@ request body (json)
 }
 ```
 
-## Login
+### Login
 
 POST request to ```http://localhost:3000/login```
 
