@@ -1,14 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const dao = require('./dao/dao')
-const promise = require('bluebird');
-const options = {
-  promiseLib: promise
-};
-const pg = require('pg')
-const pgp = require('pg-promise')(options);
-const connectionString = 'postgres://postgres:12345@localhost:5432/users'
-const db = pgp(connectionString);
 const app = express()
 
 app.use(bodyParser.json())
@@ -19,9 +11,10 @@ app.use(bodyParser.json())
 * Params: username, password
 * Return: 'Correct username and password'
 **/
-app.post('/login', function (req, res) {
+app.post('/login', function (req, res, next) {
   console.log('post – /login')
-  res.send()
+  dao.readUserByUsernameAndPassword(req, res, next)
+  
 })
 
 /**
@@ -32,7 +25,9 @@ app.post('/login', function (req, res) {
 **/
 app.post('/user/new', function (req, res) {
   console.log('post – /user/new')
-  res.send()
+  dao.createUser(req, res)
+
+  
 })
 
 /**
@@ -43,7 +38,7 @@ app.post('/user/new', function (req, res) {
 **/
 app.get('/users', function (req, res, next) {
   console.log('get – /users')
-  res.send()
+  dao.readAllUsers(req, res)
 })
 
 /**
@@ -54,7 +49,7 @@ app.get('/users', function (req, res, next) {
 **/
 app.get('/user/:username', function (req, res) {
   console.log('get – /user/'+req.params.username)
-  res.send()
+  dao.readUsersByUsername(req, res)
 })
 
 /**
@@ -65,7 +60,7 @@ app.get('/user/:username', function (req, res) {
 **/
 app.put('/user/changeByID', function (req, res) {
   console.log('put – /user/changeByID')
-  res.send()
+  dao.updateUser(req, res)
 })
 
 
