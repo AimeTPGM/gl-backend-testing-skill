@@ -1,6 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const dao = require('./dao/dao')
+const promise = require('bluebird');
+const options = {
+  promiseLib: promise
+};
+const pg = require('pg')
+const pgp = require('pg-promise')(options);
+const connectionString = 'postgres://postgres:12345@localhost:5432/users'
+const db = pgp(connectionString);
 const app = express()
 
 app.use(bodyParser.json())
