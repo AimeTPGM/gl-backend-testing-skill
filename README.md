@@ -48,4 +48,68 @@ $cd gl-backend-testing-skill
 $node app.js
 ```
 
+App will be running on localhost:3000
+
+# Must Try!
+
+use [Postman](https://www.getpostman.com/) to send a request to the app!
+
+**Available APIs**
+
+## Register a member
+
+POST request to ```http://localhost:3000/user/new```
+
+request body (json)
+
+```
+{
+	"username" : "John",
+	"password" : "1234",
+	"email" : "john.d@gmail.com"
+}
+```
+
+## Get all users' information
+
+GET request to ```http://localhost:3000/users```
+
+## Get users' information by username
+
+GET request to ```http://localhost:3000/user/:username```
+
+Example 
+```
+http://localhost:3000/user/John
+http://localhost:3000/user/Aime
+```
+
+## Change a user's information by ID
+
+PUT request to ```http://localhost:3000/user/changeByID```
+
+request body (json)
+
+```
+{
+	"id" : "1",
+	"username" : "John",
+	"password" : "1234",
+	"email" : "doe.j@gmail.com"
+}
+```
+
+## Login
+
+POST request to ```http://localhost:3000/login```
+
+request body (json)
+
+```
+{
+	"username" : "John",
+	"password" : "1234"
+}
+```
+
 # Enjoy!
