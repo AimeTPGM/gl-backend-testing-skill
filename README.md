@@ -91,7 +91,7 @@ GET request to ```http://localhost:3000/users```
 
 GET request to ```http://localhost:3000/user/:username```
 
-Example 
+**Example**
 ```
 http://localhost:3000/user/John
 http://localhost:3000/user/Aime
@@ -116,7 +116,7 @@ request body (json)
 
 DELETE request to ```http://localhost:3000/user/remove/:id```
 
-Example 
+**Example** 
 ```
 http://localhost:3000/user/remove/1
 ```
